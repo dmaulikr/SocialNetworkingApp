@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Social/Social.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *tweetText;
@@ -16,6 +17,7 @@
 - (void) configureTweetTextView;
 - (void) configureFBpostTextView;
 - (void) configureMoreTextView;
+- (void) resignToFirstRespondent;
 @end
 
 @implementation ViewController
@@ -44,6 +46,23 @@
     self.moreText.layer.borderWidth = 2.0;
 }
 
+- (void) resignToFirstRespondent
+{
+    if ([self.tweetText isFirstResponder]) {
+        [self.tweetText resignFirstResponder];
+    }
+    
+    if ([self.fbpostText isFirstResponder]) {
+        [self.fbpostText resignFirstResponder];
+    }
+    
+    if ([self.moreText isFirstResponder]) {
+        [self.moreText resignFirstResponder];
+    }
+    
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -59,21 +78,35 @@
 
 - (IBAction)showShareTweetAction:(id)sender
 {
+    [self resignFirstResponder];
     
 }
 
 - (IBAction)showShareFBPostAction:(id)sender
 {
+    [self resignFirstResponder];
     
 }
 
 - (IBAction)showShareMediaAction:(id)sender
 {
-    
+    [self resignFirstResponder];
 }
 
 - (IBAction)generatePopUpAction:(id)sender
 {
+    [self resignFirstResponder];
+    
+    UIAlertController *actionController = [UIAlertController alertControllerWithTitle:@"Social Network App"
+                                                                              message:@"Share your messages on your social networks"
+                                                                       preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+    
+    [actionController addAction:okAction];
+    
+    [self presentViewController:actionController animated:YES completion:nil];
     
 }
 @end
