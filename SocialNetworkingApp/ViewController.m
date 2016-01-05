@@ -18,6 +18,8 @@
 - (void) configureFBpostTextView;
 - (void) configureMoreTextView;
 - (void) resignToFirstRespondent;
+- (void) showAlertMessage:(NSString *) myMessage;
+
 @end
 
 @implementation ViewController
@@ -59,9 +61,16 @@
     if ([self.moreText isFirstResponder]) {
         [self.moreText resignFirstResponder];
     }
-    
-    
 }
+
+- (void) showAlertMessage:(NSString *) myMessage
+{
+    UIAlertController *alertController;
+    alertController = [UIAlertController alertControllerWithTitle:@"Social Network App" message:myMessage preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil]];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -80,12 +89,37 @@
 {
     [self resignFirstResponder];
     
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *twitterVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        if ([self.tweetText.text length] < 140) {
+            [twitterVC setInitialText:self.tweetText.text];
+        }
+        else
+        {
+            NSString *shortText = [self.tweetText.text substringToIndex:140];
+            [twitterVC setInitialText:shortText];
+        }
+        [self presentViewController:twitterVC animated:YES completion:nil];
+    }
+    else
+    {
+        [self showAlertMessage:@"Please sign in to twitter before you tweet"];
+    }
 }
 
 - (IBAction)showShareFBPostAction:(id)sender
 {
     [self resignFirstResponder];
     
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        
+    }
+    else
+    {
+        [self showAlertMessage:@"Please sign in to Facebook before you post"];
+    }
 }
 
 - (IBAction)showShareMediaAction:(id)sender
