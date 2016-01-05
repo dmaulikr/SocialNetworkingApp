@@ -128,7 +128,8 @@
 {
     [self resignFirstResponder];
     
-    
+    UIActivityViewController *moreVC = [[UIActivityViewController alloc] initWithActivityItems:@[self.moreText.text] applicationActivities:nil];
+    [self presentViewController:moreVC animated:YES completion:nil];
 }
 
 - (IBAction)generatePopUpAction:(id)sender
