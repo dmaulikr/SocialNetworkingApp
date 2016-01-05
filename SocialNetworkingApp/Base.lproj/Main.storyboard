@@ -59,6 +59,9 @@
                                     </barButtonItem>
                                     <barButtonItem systemItem="action" id="qHH-wr-6h9">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="generatePopUpAction:" destination="BYZ-38-t0r" id="n4q-Vc-IFn"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                                 <color key="barTintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
