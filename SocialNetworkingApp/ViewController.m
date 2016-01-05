@@ -114,7 +114,9 @@
     
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
-        
+        SLComposeViewController *fbVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [fbVC setInitialText:self.fbpostText.text];
+        [self presentViewController:fbVC animated:YES completion:nil];
     }
     else
     {
@@ -125,6 +127,8 @@
 - (IBAction)showShareMediaAction:(id)sender
 {
     [self resignFirstResponder];
+    
+    
 }
 
 - (IBAction)generatePopUpAction:(id)sender
