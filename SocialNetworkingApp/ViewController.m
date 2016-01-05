@@ -9,6 +9,9 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *tweetText;
+@property (weak, nonatomic) IBOutlet UITextView *fbpostText;
+@property (weak, nonatomic) IBOutlet UITextView *moreText;
 
 @end
 
@@ -24,4 +27,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)showShareTweetAction:(id)sender {
+}
+- (IBAction)showShareFBPostAction:(id)sender {
+}
+- (IBAction)showShareMediaAction:(id)sender {
+}
 @end

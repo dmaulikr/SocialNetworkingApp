@@ -1,25 +1,85 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="This little tweet goes to Twitter." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sJX-oo-kil">
+                                <rect key="frame" x="40" y="74" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="This little post goes to Facebook :)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hCX-Lk-5GX">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="This little text is going to be shared..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b6i-OJ-VuV">
+                                <rect key="frame" x="40" y="364" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgt-0Z-fTO">
+                                <rect key="frame" x="-4" y="20" width="328" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="rX6-nf-92D">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="showShareTweetAction:" destination="BYZ-38-t0r" id="4UQ-lI-ema"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="action" id="2cl-BV-buQ">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="showShareFBPostAction:" destination="BYZ-38-t0r" id="Ag5-LZ-aXM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="action" id="7Oq-PP-seL">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="showShareMediaAction:" destination="BYZ-38-t0r" id="xST-Lr-geK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="action" id="qHH-wr-6h9">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vgt-0Z-fTO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="EXX-HY-e0h"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vgt-0Z-fTO" secondAttribute="trailing" constant="-20" id="Rdd-8X-UTk"/>
+                            <constraint firstItem="vgt-0Z-fTO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="mnw-yc-E8t"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fbpostText" destination="hCX-Lk-5GX" id="j2I-Hx-7tb"/>
+                        <outlet property="moreText" destination="b6i-OJ-VuV" id="fYV-8M-5c5"/>
+                        <outlet property="tweetText" destination="sJX-oo-kil" id="cgB-dv-ram"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="130.66666666666666" y="378.19333333333333"/>
         </scene>
     </scenes>
 </document>
