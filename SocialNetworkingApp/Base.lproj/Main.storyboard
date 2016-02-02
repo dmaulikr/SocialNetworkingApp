@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -18,20 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="This little tweet goes to Twitter." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sJX-oo-kil">
-                                <rect key="frame" x="40" y="74" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="This little tweet goes to Twitter." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sJX-oo-kil">
+                                <rect key="frame" x="20" y="74" width="280" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="This little post goes to Facebook :)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hCX-Lk-5GX">
-                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="This little post goes to Facebook :)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hCX-Lk-5GX">
+                                <rect key="frame" x="20" y="220" width="280" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="This little text is going to be shared..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b6i-OJ-VuV">
-                                <rect key="frame" x="40" y="364" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="This little text is going to be shared..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b6i-OJ-VuV">
+                                <rect key="frame" x="20" y="364" width="280" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -69,9 +69,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="b6i-OJ-VuV" firstAttribute="top" secondItem="hCX-Lk-5GX" secondAttribute="bottom" constant="16" id="1BP-du-5BJ"/>
+                            <constraint firstItem="hCX-Lk-5GX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="296-jH-ezd"/>
+                            <constraint firstItem="b6i-OJ-VuV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Cai-v2-j02"/>
                             <constraint firstItem="vgt-0Z-fTO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="EXX-HY-e0h"/>
+                            <constraint firstItem="sJX-oo-kil" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="PI3-xU-ECy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vgt-0Z-fTO" secondAttribute="trailing" constant="-20" id="Rdd-8X-UTk"/>
+                            <constraint firstItem="hCX-Lk-5GX" firstAttribute="top" secondItem="sJX-oo-kil" secondAttribute="bottom" constant="18" id="SIr-P9-aWp"/>
+                            <constraint firstItem="hCX-Lk-5GX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="esv-p0-CfW"/>
+                            <constraint firstItem="b6i-OJ-VuV" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="iTN-N6-8dc"/>
+                            <constraint firstItem="sJX-oo-kil" firstAttribute="top" secondItem="vgt-0Z-fTO" secondAttribute="bottom" constant="10" id="jSq-X2-t5l"/>
                             <constraint firstItem="vgt-0Z-fTO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="mnw-yc-E8t"/>
+                            <constraint firstItem="sJX-oo-kil" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="w2n-BM-XEY"/>
                         </constraints>
                     </view>
                     <connections>
@@ -82,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.66666666666666" y="378.19333333333333"/>
+            <point key="canvasLocation" x="130" y="378"/>
         </scene>
     </scenes>
 </document>
